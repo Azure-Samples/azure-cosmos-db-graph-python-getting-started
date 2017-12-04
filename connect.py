@@ -121,7 +121,7 @@ try:
     
 
     # Update a couple of vertices
-    raw_input("Ah, sorry. I made a mistake. Let's change the ages of these two vertices. Press any key to continue...")
+    input("Ah, sorry. I made a mistake. Let's change the ages of these two vertices. Press any key to continue...")
     update_vertices(client)
 
     # Count all vertices
