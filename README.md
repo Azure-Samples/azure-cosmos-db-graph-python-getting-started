@@ -12,8 +12,11 @@ Azure Cosmos DB is a globally distributed multi-model database. One of the suppo
 * Before you can run this sample, you must have the following prerequisites:
 
    * An active Azure account. If you don't have one, you can sign up for a [free account](https://azure.microsoft.com/free/). Alternatively, you can use the [Azure Cosmos DB Emulator](https://azure.microsoft.com/documentation/articles/documentdb-nosql-local-emulator) for this tutorial.
-   * JDK 1.7+ (Run `apt-get install default-jdk` if you don't have JDK)
-   * Maven (Run `apt-get install maven` if you don't have Maven)
+  * [Python](https://www.python.org/downloads/) version v2.7.14 or newer.
+  * [pip package manager](https://pip.pypa.io/en/stable/installing/)
+  * [Git](http://git-scm.com/)
+  * [Python Driver for Gremlin](https://github.com/apache/tinkerpop/tree/master/gremlin-python)
+
 
 * Then, clone this repository using `git clone https://github.com/Azure-Samples/azure-cosmos-db-graph-python-getting-started.git`
 
