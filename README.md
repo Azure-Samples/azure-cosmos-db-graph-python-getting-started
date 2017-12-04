@@ -12,7 +12,7 @@ Azure Cosmos DB is a globally distributed multi-model database. One of the suppo
 * Before you can run this sample, you must have the following prerequisites:
 
   * An active Azure account. If you don't have one, you can sign up for a [free account](https://azure.microsoft.com/free/). 
-  * [Python](https://www.python.org/downloads/) version v2.7.14 or newer.
+  * [Python](https://www.python.org/downloads/) version v3.4 or newer. In order for this sample to work with Python 2.7, change all references from `input()` to `raw_input()`.
   * [pip package manager](https://pip.pypa.io/en/stable/installing/)
   * [Git](http://git-scm.com/)
   * [Python Driver for Gremlin](https://github.com/apache/tinkerpop/tree/master/gremlin-python)
