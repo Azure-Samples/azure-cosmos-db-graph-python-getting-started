@@ -108,15 +108,15 @@ try:
     print("Welcome to Azure Cosmos DB + Gremlin on Python!")
     
     # Drop the entire Graph
-    raw_input("We're about to drop whatever graph is on the server. Press any key to continue...")
+    input("We're about to drop whatever graph is on the server. Press any key to continue...")
     cleanup_graph(client)
 
     # Insert all vertices
-    raw_input("Let's insert some vertices into the graph. Press any key to continue...")
+    input("Let's insert some vertices into the graph. Press any key to continue...")
     insert_vertices(client)
 
     # Create edges between vertices
-    raw_input("Now, let's add some edges between the vertices. Press any key to continue...")
+    input("Now, let's add some edges between the vertices. Press any key to continue...")
     insert_edges(client)
     
 
@@ -125,24 +125,25 @@ try:
     update_vertices(client)
 
     # Count all vertices
-    raw_input("Okay. Let's count how many vertices we have. Press any key to continue...")
+    input("Okay. Let's count how many vertices we have. Press any key to continue...")
     count_vertices(client)
 
     # Execute traversals and get results 
-    raw_input("Cool! Let's run some traversals on our graph. Press any key to continue...")
+    input("Cool! Let's run some traversals on our graph. Press any key to continue...")
     execute_traversals(client)
 
     # Drop a few vertices and edges
-    raw_input("So, life happens and now we will make some changes to the graph. Press any key to continue...")
+    input("So, life happens and now we will make some changes to the graph. Press any key to continue...")
     execute_drop_operations(client)
 
     # Count all vertices again
-    raw_input("How many vertices do we have left? Press any key to continue...")
+    input("How many vertices do we have left? Press any key to continue...")
     count_vertices(client)
 
 except Exception as e:
     print('There was an exception: {0}'.format(e))
     traceback.print_exc(file=sys.stdout)
+    sys.exit(1)
 
 print("\nAnd that's all! Sample complete")
-raw_input("Press Enter to continue...")
+input("Press Enter to continue...")
