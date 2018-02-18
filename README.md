@@ -30,8 +30,7 @@ client = client.Client('wss://<YOUR_ENDPOINT>:443/','g',
 
 | Setting | Suggested Value | Description |
 | ------- | --------------- | ----------- |
-| YOUR_ENDPOINT   | [***.graphs.azure.com] | This is the Gremlin URI value on the Overview page of the Azure portal, in square brackets, with the trailing :443/ removed.  This value can also be retrieved from the Keys tab, using the URI value by removing https://, changing documents to graphs, and removing the trailing :443/. |
-| port | 443 | Set the port to 443 |
+| YOUR_ENDPOINT   | [`***.gremlin.cosmosdb.azure.com:<port>`] | This is the Gremlin URI value on the Overview page of the Azure portal, in square brackets, with the trailing :443/ removed.  This value can also be retrieved from the Overview tab, using the Gremlin Endpoint value by replacing https:// with wss://, and removing the trailing :443/. |
 | username | `/dbs/<db>/colls/<coll>` | The resource of the form `/dbs/<db>/colls/<coll>` where `<db>` is your database name and `<coll>` is your collection name. |
 | password | Your primary key | This is your primary key, which you can retrieve from the Keys page of the Azure portal, in the Primary Key box. Use the copy button on the left side of the box to copy the value. |
 
