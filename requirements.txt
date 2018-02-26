@@ -1,2 +1,2 @@
-gremlinpython==2.7.0
+gremlinpython
 futures
