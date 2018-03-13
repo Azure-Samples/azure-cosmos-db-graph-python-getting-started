@@ -24,8 +24,10 @@ Azure Cosmos DB is a globally distributed multi-model database. One of the suppo
 
 ```python
 client = client.Client('wss://<YOUR_ENDPOINT>:443/','g', 
-        username="/dbs/<YOUR_DATABASE>/colls/<YOUR_COLLECTION_OR_GRAPH>", 
-        password="<YOUR_PASSWORD>")
+            username="/dbs/<YOUR_DATABASE>/colls/<YOUR_COLLECTION_OR_GRAPH>", 
+            password="<YOUR_PASSWORD>",
+            message_serializer=serializer.GraphSONSerializersV2d0()
+        )
 ```
 
 | Setting | Suggested Value | Description |
