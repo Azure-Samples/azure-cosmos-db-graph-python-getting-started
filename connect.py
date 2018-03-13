@@ -1,4 +1,4 @@
-from gremlin_python.driver import client
+from gremlin_python.driver import client, serializer
 import sys, traceback
 
 _gremlin_cleanup_graph = "g.V().drop()"
@@ -28,7 +28,7 @@ _gremlin_traversals = {
     "Get all persons sorted by first name"   : "g.V().hasLabel('person').order().by('firstName', incr).values('firstName')",
     "Get all persons that Thomas knows"      : "g.V('thomas').out('knows').hasLabel('person').values('firstName')",
     "People known by those who Thomas knows" : "g.V('thomas').out('knows').hasLabel('person').out('knows').hasLabel('person').values('firstName')",
-    "Get the path from Thomas to Robin"      : "g.V('thomas').repeat(out()).until(has('id', 'robin')).path()"
+    "Get the path from Thomas to Robin"      : "g.V('thomas').repeat(out()).until(has('id', 'robin')).path().by('firstName')"
 }
 
 _gremlin_drop_operations = {
@@ -103,7 +103,9 @@ def execute_drop_operations(client):
 try:
     client = client.Client('wss://<YOUR_ENDPOINT>:443/','g', 
         username="/dbs/<YOUR_DATABASE>/colls/<YOUR_COLLECTION_OR_GRAPH>", 
-        password="<YOUR_PASSWORD>")
+        password="<YOUR_PASSWORD>",
+        message_serializer=serializer.GraphSONSerializersV2d0()
+        )
     
     print("Welcome to Azure Cosmos DB + Gremlin on Python!")
     
