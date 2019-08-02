@@ -4,10 +4,10 @@ import sys, traceback
 _gremlin_cleanup_graph = "g.V().drop()"
 
 _gremlin_insert_vertices = [
-    "g.addV('person').property('id', 'thomas').property('firstName', 'Thomas').property('age', 44)",
-    "g.addV('person').property('id', 'mary').property('firstName', 'Mary').property('lastName', 'Andersen').property('age', 39)",
-    "g.addV('person').property('id', 'ben').property('firstName', 'Ben').property('lastName', 'Miller')",
-    "g.addV('person').property('id', 'robin').property('firstName', 'Robin').property('lastName', 'Wakefield')"
+    "g.addV('person').property('id', 'thomas').property('firstName', 'Thomas').property('age', 44).property('pk', 'pk')",
+    "g.addV('person').property('id', 'mary').property('firstName', 'Mary').property('lastName', 'Andersen').property('age', 39).property('pk', 'pk')",
+    "g.addV('person').property('id', 'ben').property('firstName', 'Ben').property('lastName', 'Miller').property('pk', 'pk')",
+    "g.addV('person').property('id', 'robin').property('firstName', 'Robin').property('lastName', 'Wakefield').property('pk', 'pk')"
 ]
 
 _gremlin_insert_edges = [
