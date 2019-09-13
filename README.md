@@ -1,7 +1,11 @@
 ---
-services: cosmos-db
-platforms: python
-author: luisbosquez
+page_type: sample
+languages:
+- python
+products:
+- azure
+description: "Azure Cosmos DB is a globally distributed multi-model database."
+urlFragment: azure-cosmos-db-graph-python-getting-started
 ---
 
 # Developing a Python Gremlin app using Azure Cosmos DB
