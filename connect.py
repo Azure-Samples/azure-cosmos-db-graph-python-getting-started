@@ -18,7 +18,7 @@ _gremlin_insert_edges = [
 ]
 
 _gremlin_update_vertices = [
-    "g.V('thomas').property('age', 44)"
+    "g.V('thomas').property('age', 100)"
 ]
 
 _gremlin_count_vertices = "g.V().count()"
@@ -138,8 +138,8 @@ try:
     input("Now, let's add some edges between the vertices. Press any key to continue...")
     insert_edges(client)
 
-    # Update a couple of vertices
-    input("Ah, sorry. I made a mistake. Let's change the ages of these two vertices. Press any key to continue...")
+    # Update a vertice
+    input("Ah, sorry. I made a mistake. Let's change the ages of one of the vertices. Press any key to continue...")
     update_vertices(client)
 
     # Count all vertices
