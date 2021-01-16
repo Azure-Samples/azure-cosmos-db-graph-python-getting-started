@@ -53,13 +53,11 @@ def print_status_attributes(result):
     print("\tResponse status_attributes:\n\t{0}".format(result.status_attributes))
 
 def cleanup_graph(client):
-    print("Running this Gremlin query:\n\t{0}".format(
+    print("\n> {0}".format(
         _gremlin_cleanup_graph))
     callback = client.submitAsync(_gremlin_cleanup_graph)
     if callback.result() is not None:
-        callback.result().all().result()
-        print("\tCleaned up the graph!")
-    
+        callback.result().all().result() 
     print("\n")
     print_status_attributes(callback.result())
     print("\n")
@@ -67,7 +65,7 @@ def cleanup_graph(client):
 
 def insert_vertices(client):
     for query in _gremlin_insert_vertices:
-        print("Running this Gremlin query:\n\t{0}\n".format(query))
+        print("\n> {0}\n".format(query))
         callback = client.submitAsync(query)
         if callback.result() is not None:
             print("\tInserted this vertex:\n\t{0}".format(
@@ -83,7 +81,7 @@ def insert_vertices(client):
 
 def insert_edges(client):
     for query in _gremlin_insert_edges:
-        print("Running this Gremlin query:\n\t{0}\n".format(query))
+        print("\n> {0}\n".format(query))
         callback = client.submitAsync(query)
         if callback.result() is not None:
             print("\tInserted this edge:\n\t{0}\n".format(
@@ -98,7 +96,7 @@ def insert_edges(client):
 
 def update_vertices(client):
     for query in _gremlin_update_vertices:
-        print("Running this Gremlin query:\n\t{0}\n".format(query))
+        print("\n> {0}\n".format(query))
         callback = client.submitAsync(query)
         if callback.result() is not None:
             print("\tUpdated this vertex:\n\t{0}\n".format(
@@ -113,7 +111,7 @@ def update_vertices(client):
 
 
 def count_vertices(client):
-    print("Running this Gremlin query:\n\t{0}".format(
+    print("\n> {0}".format(
         _gremlin_count_vertices))
     callback = client.submitAsync(_gremlin_count_vertices)
     if callback.result() is not None:
@@ -129,8 +127,8 @@ def count_vertices(client):
 
 def execute_traversals(client):
     for key in _gremlin_traversals:
-        print("\t{0}:".format(key))
-        print("Running this Gremlin query:\n\t{0}\n".format(
+        print("{0}:".format(key))
+        print("> {0}\n".format(
             _gremlin_traversals[key]))
         callback = client.submitAsync(_gremlin_traversals[key])
         for result in callback.result():
@@ -143,8 +141,8 @@ def execute_traversals(client):
 
 def execute_drop_operations(client):
     for key in _gremlin_drop_operations:
-        print("\t{0}:".format(key))
-        print("Running this Gremlin query:\n\t{0}".format(
+        print("{0}:".format(key))
+        print("\n> {0}".format(
             _gremlin_drop_operations[key]))
         callback = client.submitAsync(_gremlin_drop_operations[key])
         for result in callback.result():
