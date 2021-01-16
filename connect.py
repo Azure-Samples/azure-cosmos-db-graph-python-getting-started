@@ -7,7 +7,6 @@ _gremlin_cleanup_graph = "g.V().drop()"
 
 _gremlin_insert_vertices = [
     "g.addV('person').property('id', 'thomas').property('firstName', 'Thomas').property('age', 44).property('pk', 'pk')",
-    #"g.addV('person').property('id', 'thomas').property('firstName', 'Thomas').property('age', 44).property('pk', 'pk')",
     "g.addV('person').property('id', 'mary').property('firstName', 'Mary').property('lastName', 'Andersen').property('age', 39).property('pk', 'pk')",
     "g.addV('person').property('id', 'ben').property('firstName', 'Ben').property('lastName', 'Miller').property('pk', 'pk')",
     "g.addV('person').property('id', 'robin').property('firstName', 'Robin').property('lastName', 'Wakefield').property('pk', 'pk')"
@@ -212,10 +211,10 @@ except GremlinServerError as e:
         print('Conflict error!')
     elif cosmos_status_code == 412:
         print('Precondition error!')
-    elif cosmos_status_code == 408:
-        print('Server timeout error!')
     elif cosmos_status_code == 429:
         print('Throttling error!');
+    elif cosmos_status_code == 1009:
+        print('Request timeout error!')
     else:
         print("Default error handling")
 
