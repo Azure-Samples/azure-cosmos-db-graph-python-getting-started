@@ -1,2 +1,2 @@
-gremlinpython==3.4.1
+gremlinpython==3.4.8
 futures
