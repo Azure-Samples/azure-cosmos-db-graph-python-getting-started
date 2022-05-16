@@ -2,6 +2,10 @@ from gremlin_python.driver import client, serializer, protocol
 from gremlin_python.driver.protocol import GremlinServerError
 import sys
 import traceback
+import asyncio
+
+if sys.platform == 'win32':
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 _gremlin_cleanup_graph = "g.V().drop()"
 
