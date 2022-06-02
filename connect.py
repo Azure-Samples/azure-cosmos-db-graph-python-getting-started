@@ -177,7 +177,7 @@ try:
     insert_edges(client)
 
     # Update a vertex
-    input("Ah, sorry. I made a mistake. Let's change the ages of this vertex. Press any key to continue...")
+    input("Ah, sorry. I made a mistake. Let's change the age of this vertex. Press any key to continue...")
     update_vertices(client)
 
     # Count all vertices
